@@ -36,8 +36,8 @@ module.exports = function(passport) {
                   newUser.token         = accessToken;
                   newUser.name          = profile.name.givenName + ' ' + profile.name.familyName;
                   newUser.picture       = profile.photos ? profile.photos[0].value : '/img/faces/unknown-user-pic.jpg',
-                  newUser.email         = profile.emails[0].value;//Je kan meerdere emails hebben daarom eerste email
-                  
+                  newUser.email         = profile.emails[0].value,//Je kan meerdere emails hebben daarom eerste email
+                  newUser.admin         = '0'
                   newUser.save(function(err) {
                       if (err)
                           throw err;

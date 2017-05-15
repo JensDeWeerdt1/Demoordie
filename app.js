@@ -27,6 +27,7 @@ app.use(cookieParser());
 app.use('/', require('./routes/index'));
 app.use('/', require('./routes/profile'));
 app.use('/', require('./routes/logout'));
+app.use('/', require('./routes/users'));
 
 app.get('/login/facebook',
     passport.authenticate('facebook', { scope : 'email' }));

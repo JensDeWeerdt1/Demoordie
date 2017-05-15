@@ -3,16 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <title>Profile page</title>
+    <link rel="stylesheet" href="./css/app.css">
 </head>
 <body>
-    <h2>Dit is de account pagina</h2>
-    <%= user.email %>
-    <%= user.name %>
-    <img src="<%= user.picture %>" alt="">
-    <form action="/profile/edit" method="post">
+    <div class="flexcontainer">
+        <div class="flexitem halfbg">
+            <img class="profielfoto" src="<%= user.picture %>" alt="profielfoto"><h4><%= user.name %></h4>
+    <!--<form action="/profile/edit" method="post">
         <input type="text" name="username" placeholder="username">
         <button type="submit">Update</button>
-    </form>
-    <a href="/logout">logout</a>
+    </form>-->
+            <a href="/logout">logout</a>
+        </div>
+        <div class="flexitem">
+            <p class="infotext">
+                In groups
+                <span class="valuetext">
+                Webtech1, Php1
+            </span>
+            </p>
+            
+            <p class="infotext">
+                Last time on stage
+                <span class="valuetext">
+                Now
+            </span>
+            </p>
+            <hr>
+            
+        </div>
+    </div>
+    
 </body>
 </html>

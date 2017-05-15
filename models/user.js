@@ -6,7 +6,8 @@ var userSchema = mongoose.Schema({
     token       : String,
     name        : String,
     picture     : String,
-    email       : String
+    email       : String,
+    admin       : String
 });
 // create the model for users and expose it to our app
 module.exports = mongoose.model('User', userSchema);

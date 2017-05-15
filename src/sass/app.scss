@@ -1,0 +1,83 @@
+@import "components/buttons";
+
+html, body{
+    font-family: Ubuntu, Helvetica;
+    margin:0;
+    padding:0px;
+}
+
+
+.fullbg{
+    background-image:url("../../images/background.jpg");
+    background-size:cover;
+    height:100vh;
+    background-repeat:no-repeat;
+}
+
+.halfbg{
+    background-image:url("../../images/background.jpg");
+    background-repeat:no-repeat;
+    background-size:cover;
+    height:50vh;
+}
+
+h1{
+    display:block;
+    text-align: center;
+    margin-left:auto;
+    margin-right:auto;
+    font-size: 3EM;
+    margin-top:20vh;
+    color:white;
+}
+
+a{
+    text-decoration: none;
+}
+
+#loginbtn{
+    display:block;
+    width: 300px;
+    text-align:center;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:200px;
+}
+
+.profielfoto{
+    float:left;
+    width:50px;
+    padding:10px;
+}
+
+h4{
+    color:white;
+    font-weight:200;
+    padding-top:5px;
+}
+
+.underbg{
+    margin:178px 10px 10px 10px;
+    
+}
+
+.flexcontainer{
+    display:flex;
+    flex-direction:column;
+}
+
+.flexitem{
+    padding:10px;
+}
+
+.infotext{
+    margin:10px;
+}
+
+.valuetext{
+    float:right;
+    margin-right:10px;
+    font-weight:bold;
+}
+
+
