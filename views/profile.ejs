@@ -6,5 +6,13 @@
 </head>
 <body>
     <h2>Dit is de account pagina</h2>
+    <%= user.email %>
+    <%= user.name %>
+    <img src="<%= user.picture %>" alt="">
+    <form action="/profile/edit" method="post">
+        <input type="text" name="username" placeholder="username">
+        <button type="submit">Update</button>
+    </form>
+    <a href="/logout">logout</a>
 </body>
 </html>
