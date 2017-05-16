@@ -5,13 +5,17 @@ var User = require('../models/user');
 var Group = require('../models/group');
 
 router.get('/users', userController.isLoggedIn,function(req, res, users) {
-    User.find(function(err, users){
+    Group.find(function(err, groups){
+        User.find(function(err, users){
         res.render('users', {
         user : req.user,
-        users: users
-    })
+        users: users,
+        groups: groups
+        })
     
     });
+    })
+    
     
 });
 
