@@ -29,6 +29,7 @@ app.use('/', require('./routes/profile'));
 app.use('/', require('./routes/logout'));
 app.use('/', require('./routes/users'));
 app.use('/', require('./routes/groups'));
+app.use('/', require('./routes/userprofiles'));
 
 app.get('/login/facebook',
     passport.authenticate('facebook', { scope : 'email' }));

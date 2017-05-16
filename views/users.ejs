@@ -16,7 +16,10 @@
 </div>
 <div class="flexcontainer1">
 <% for(var i=0; i<users.length; i++) {%>
-   <div class="flexitem1"><img src="<%= users[i].picture %>" alt="profielfoto" class="profielfoto1"></div>
+  <% var userselect = users[i].name;
+    userselect = userselect.replace(/\s+/g, ''); //geen spaties in user url
+   %>
+   <div class="flexitem1"><a href="/<%= i %>"><img src="<%= users[i].picture %>" alt="profielfoto" class="profielfoto1"></a></div>
 <% } %>
 </ul>
 </body>
