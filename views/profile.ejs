@@ -19,7 +19,9 @@
             <p class="infotext">
                 In groups
                 <span class="valuetext">
-                Webtech1, Php1
+                <a href="/group"><% for(var i=0; i<groups.length; i++) {%>
+   <%= groups[i].groupname %>,
+<% } %></a>
             </span>
             </p>
             

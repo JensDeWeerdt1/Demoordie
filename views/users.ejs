@@ -3,8 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Users</title>
+    <link rel="stylesheet" href="./css/app.css">
 </head>
 <body>
-   <div><img src="<%= user.picture %>" alt="profielfoto"></div> 
+<div class="form-group">
+  <label for="sel1">Select a group</label>
+  <select class="form-control" id="sel1">
+   <% for(var i=0; i<users.length; i++) {%>
+   <option><%= users[i].name %></option>
+<% } %>
+  </select>
+</div>
+<div class="flexcontainer1">
+<% for(var i=0; i<users.length; i++) {%>
+   <div class="flexitem1"><img src="<%= users[i].picture %>" alt="profielfoto" class="profielfoto1"></div>
+<% } %>
+</ul>
 </body>
 </html>
