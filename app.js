@@ -8,22 +8,9 @@ var session = require('express-session');
 var socket_io = require('socket.io');
 
 var app = express();
-//Socket.io
-/*var server = require('http').Server(app);
-var io = require('socket.io')(server);
-
-server.listen(80);
-
-app.get('/', function (req, res) {
-  res.sendfile(__dirname + '/index.html');
-});
-
-io.on('connection', function (socket) {
-  socket.emit('news', { hello: 'world' });
-  socket.on('my other event', function (data) {
-    console.log(data);
-  });
-});*/
+//SOCKET IO
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
 
 mongoose.connect('mongodb://localhost/demoordie');
 // pass passport for configuration
@@ -58,15 +45,24 @@ app.get('/auth/facebook/callback',
     res.redirect('/profile');
   });
 
-app.listen(3000, function () {
+//ALL SOCKETS
+io.on('connection', function(socket){
+  socket.on("New Discussion", function(newDiscussion){
+      controller.create(newDiscussion, function(returnDiscussion){
+        console.log(returnDiscussion);
+        io.emit("newDiscussionInDB", returnDiscussion);
+      });
+  });
+    console.log("connection made");
+    
+  
+  });
+
+http.listen(3000, function () {
     console.log('Example app listening on port 3000!');
 })
 
 
-//socket.io events
-/*io.on("connection", function(socket){
-    console.log("a user is connected");
-});*/
 
 
 
