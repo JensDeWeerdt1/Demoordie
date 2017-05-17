@@ -34,6 +34,7 @@ router.post('/group/edit', function (req,res) {
             })
         }
     });
+    
     res.redirect('/profile');
 });
     
