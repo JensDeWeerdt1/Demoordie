@@ -4,6 +4,23 @@
     <meta charset="UTF-8">
     <title>Users</title>
     <link rel="stylesheet" href="./css/app.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+    <script>
+        $(document).ready(function(){
+           $("#search").keyup(function(){
+              //inputbox value
+              var val = $(this).val().toLowerCase();
+               $(".flexitem1").hide(); 
+               $(".flexitem1").each(function(){
+                   var text = $(this).attr("value").toLowerCase();
+                   if(text.indexOf(val) != -1){
+                       $(this).show();
+                   }
+               })
+           });
+        });
+    </script>
 </head>
 <body>
 <div class="form-group">
@@ -13,13 +30,15 @@
    <option><%= groups[i].groupname %></option>
 <% } %>
   </select>
+  <label for="sel1">Find a user</label>
+  <input id="search" class="form-control" type="text" name="search" placeholder="Search user">
 </div>
 <div class="flexcontainer1">
 <% for(var i=0; i<users.length; i++) {%>
   <% var userselect = users[i].name;
     userselect = userselect.replace(/\s+/g, ''); //geen spaties in user url
    %>
-   <div class="flexitem1"><a href="/<%= i %>"><img src="<%= users[i].picture %>" alt="profielfoto" class="profielfoto1"></a></div>
+   <div class="flexitem1" value="<%= users[i].name %>"><a href="/<%= i %>"><img src="<%= users[i].picture %>" alt="profielfoto" class="profielfoto1"></a></div>
 <% } %>
 </ul>
 <a href="#" class="btn voting1">Start random voting</a>
