@@ -41,6 +41,18 @@ app.get('/auth/facebook/callback',
     res.redirect('/profile');
   });
 
+io.on('connection', function(socket){
+  socket.on("New Discussion", function(newDiscussion){
+      controller.create(newDiscussion, function(returnDiscussion){
+        console.log(returnDiscussion);
+        io.emit("newDiscussionInDB", returnDiscussion);
+      });
+  });
+    console.log("connection made");
+    
+  
+  });
+
 app.listen(3000, function () {
     console.log('Example app listening on port 3000!');
 })
