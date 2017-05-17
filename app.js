@@ -5,8 +5,11 @@ var passport   = require('passport');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
+var socket_io = require('socket.io');
 
 var app = express();
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
 
 mongoose.connect('mongodb://localhost/demoordie');
 // pass passport for configuration

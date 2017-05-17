@@ -8,5 +8,16 @@
 <body class="fullbg">
     <h1>Demo Or die</h1>
     <div id="loginbtn"><a href="/login/facebook" class="btn">Login with facebook</a></div>
+    
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  var socket = io();
+  socket.on('news', function (data) {
+    console.log(data);
+    socket.emit('my other event', { my: 'data' });
+  });
+    
+  //  var socket = io();
+</script>
 </body>
 </html>
