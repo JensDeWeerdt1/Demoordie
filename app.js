@@ -8,6 +8,7 @@ var session = require('express-session');
 var socket_io = require('socket.io');
 
 var app = express();
+//SOCKET IO
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
@@ -44,6 +45,7 @@ app.get('/auth/facebook/callback',
     res.redirect('/profile');
   });
 
+//ALL SOCKETS
 io.on('connection', function(socket){
   socket.on("New Discussion", function(newDiscussion){
       controller.create(newDiscussion, function(returnDiscussion){
@@ -56,9 +58,12 @@ io.on('connection', function(socket){
   
   });
 
-app.listen(3000, function () {
+http.listen(3000, function () {
     console.log('Example app listening on port 3000!');
 })
+
+
+
 
 
 
