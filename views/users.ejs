@@ -9,15 +9,11 @@
     <script>
         $(document).ready(function(){
            $("#search").keyup(function(){
-
               //inputbox value
               var val = $(this).val().toLowerCase();
-               
-               $(".flexitem1").hide();
-               
+               $(".flexitem1").hide(); 
                $(".flexitem1").each(function(){
                    var text = $(this).attr("value").toLowerCase();
-                   
                    if(text.indexOf(val) != -1){
                        $(this).show();
                    }
@@ -37,15 +33,16 @@
   <label for="sel1">Find a user</label>
   <input id="search" class="form-control" type="text" name="search" placeholder="Search user">
 </div>
-<div class="flexcontainer1">
-
+<div id="list" class="flexcontainer1">
 <% for(var i=0; i<users.length; i++) {%>
    <!--<div class="flexitem1"><img src="<%= users[i].picture %>" alt="profielfoto" class="profielfoto1"></div>-->
-   <div class="flexitem1" value="<%= users[i].name %>"><img src="<%= users[i].picture %>" alt="profielfoto" class="profielfoto1"></div>
+   <div class="flexitem1" value="<%= users[i].name %>">
+       <img src="<%= users[i].picture %>" alt="profielfoto" class="profielfoto1">
+   </div>
 <% } %>
 
 
-</ul>
+</div>
 </body>
 </html>
 
