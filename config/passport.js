@@ -23,7 +23,7 @@ module.exports = function(passport) {
     profileFields: ["id", "name", "photos", "email"]
   },
   function(accessToken, refreshToken, profile, done) {
-        User.findOne({ 'facebookId' : profile.id }, function(err, user) {//gebruikt user model in combo met mongoose, zoekt dacebookid dat gelijk is aan profielid
+        User.findOne({ 'facebookId' : profile.id }, function(err, user) {//gebruikt user model in combo met mongoose, zoekt facebookid dat gelijk is aan profielid
                 
               if (err)
                   return done(err);

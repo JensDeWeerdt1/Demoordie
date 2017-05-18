@@ -33,32 +33,21 @@
   </select>
   <label for="sel1">Find a user</label>
   <input id="search" class="form-control" type="text" name="search" placeholder="Search user">
-  <!--<button class="sort" data-sort="frist-name">Voornaam</button>
-  <button class="sort" data-sort="last-name">Achternaam</button>
-  <button class="sort" data-sort="demo">Demo</button>-->
 </div>
 <div class="flexcontainer1" >
-<ul>
 <% for(var i=0; i<users.length; i++) {%>
   <% var userselect = users[i].name;
      userselect = userselect.replace(/\s+/g, ''); //geen spaties in user url
    %>
-    <li>
            <div class="flexitem1" id="users" value="<%= users[i].name %>">
             <a href="/<%= i %>">
             <img src="<%= users[i].picture %>" alt="profielfoto" class="profielfoto1">
             </a>
-            </div>
-    </li>
+           </div>
 <% } %>
-</ul>
 </div>
 <a href="#" class="btn voting1">Start random voting</a>
 
-<!--<script>
-    var options = {valueNames: ['first-name', 'last-name', 'demo']  };
-    var userList = new List('users', options);
-</script>*/-->
 
 </body>
 </html>

@@ -34,6 +34,7 @@ app.use('/', require('./routes/logout'));
 app.use('/', require('./routes/users'));
 app.use('/', require('./routes/groups'));
 app.use('/', require('./routes/userprofiles'));
+app.use('/', require('./routes/demo'));
 
 app.get('/login/facebook',
     passport.authenticate('facebook', { scope : 'email' }));
@@ -47,12 +48,12 @@ app.get('/auth/facebook/callback',
 
 //ALL SOCKETS
 io.on('connection', function(socket){
-  socket.on("New Discussion", function(newDiscussion){
+  /*socket.on("New Discussion", function(newDiscussion){
       controller.create(newDiscussion, function(returnDiscussion){
         console.log(returnDiscussion);
         io.emit("newDiscussionInDB", returnDiscussion);
       });
-  });
+  });*/
     console.log("connection made");
     
   
