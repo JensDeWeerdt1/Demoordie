@@ -37,13 +37,13 @@ app.use('/', require('./routes/userprofiles'));
 app.use('/', require('./routes/demo'));
 
 app.get('/login/facebook',
-    passport.authenticate('facebook', { scope : 'email' }));
+    passport.authenticate('facebook', { scope : 'email' })); //scope email
 
 app.get('/auth/facebook/callback',
   passport.authenticate('facebook', { failureRedirect: '/' }),
   function(req, res) {
     // Successful authentication, redirect home.
-    res.redirect('/profile');
+    res.redirect('/profile'); // (req = request) , (res = response)
   });
 
 //ALL SOCKETS

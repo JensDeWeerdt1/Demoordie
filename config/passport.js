@@ -15,11 +15,11 @@ module.exports = function(passport) {
           done(err, user);
       });
   });
-    
+    //developers.Facebook.com APP INFO
     passport.use(new FacebookStrategy({
     clientID: "362089030859415",
     clientSecret: "a0ea6fb3d03d7db5368cd33bd8ace04d",
-    callbackURL: "http://localhost:3000/auth/facebook/callback",
+    callbackURL: "http://localhost:3000/auth/facebook/callback", //na login attempt hier naartoe gaan en checken of het gelukt is. daarna pas doorsturen via app.js naar /profile
     profileFields: ["id", "name", "photos", "email"]
   },
   function(accessToken, refreshToken, profile, done) {

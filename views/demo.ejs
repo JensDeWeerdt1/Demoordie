@@ -8,14 +8,22 @@
 <body>
     <div class="flexcontainer">
         <div class="flexitem halfbg">
-            <img class="profielfoto" src="<%= user.picture %>" alt="profielfoto"><h4><%= user.name %></h4>
-            <a href="/logout">logout</a>
+            <img class="profielfotobig" src="<%= users[i].picture %>" alt="profielfoto">
         </div>
         <div class="flexitem">
-            Demo
+           <div class="demoDie">
+                <a href="" class="btn voting" id="demo">Demo</a>
+                <a href="" class="btn voting" id="die">Die</a>
+            </div>
+            <p class="infotext">
+                Now on stage
+                <span class="valuetext">
+                <%= users[i].name %>
+            </span>
+            </p>
             <hr>
-            
         </div>
+        
     </div>
     
 </body>
